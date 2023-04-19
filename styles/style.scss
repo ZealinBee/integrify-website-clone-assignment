@@ -1,0 +1,15 @@
+@use "variables/colors" as color;
+@use "mixins/buttons" as button;
+
+body {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.blob {
+    @include button.blob;
+}
+
+
+

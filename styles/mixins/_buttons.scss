@@ -1,0 +1,17 @@
+@use "../variables/colors" as color;
+
+@mixin blob($bg-color:color.$light, $color: color.$dark, $border-radius:2rem, $border: 1px solid color.$dark) {
+    background-color: $bg-color;
+    color: $color;
+    border-radius: $border-radius;
+    border: $border;
+    font-size: 0.6rem;
+    display:inline-block;
+    padding:0.2rem 0.3rem;
+    padding-right:0.1rem;
+    letter-spacing: 0.1rem;
+    &:hover {
+        background-color: $color;
+        color: $bg-color;
+    }
+}
