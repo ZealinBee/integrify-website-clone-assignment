@@ -1,0 +1,35 @@
+@use "../variables/colors" as color;
+
+header {
+    margin-left:3rem;
+    padding:1.5rem 0;
+  nav {
+    display: flex;
+    .header__nav__logo {
+      display: flex;
+      align-items: center;
+      margin-right: auto;
+      img {
+        width: 150px;
+      }
+    }
+    ul {
+      display: flex;
+      align-items: center;
+      li {
+        list-style: none;
+        a {
+          font-weight: 700;
+          text-decoration: none;
+          color: color.$light;
+          padding: 1rem;
+          &:hover {
+          }
+        }
+        &:last-child {
+          margin-right: 3rem;
+        }
+      }
+    }
+  }
+}

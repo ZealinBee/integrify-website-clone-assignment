@@ -1,0 +1,14 @@
+@use "../variables/colors" as color;
+@use "../variables/fonts" as font;
+
+@mixin article($header-color: color.$light) {
+    border-radius: 3rem;
+    display:flex;
+    flex-direction: column;
+    color:$header-color;
+    font-family: font.$primary-font;
+    h1, h2, h3, h4 {
+        font-family: font.$secondary-font;
+    }
+
+}

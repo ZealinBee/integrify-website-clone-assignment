@@ -1,7 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Open+Sans:wght@400;700&family=Poppins:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+header {
+  margin-left: 3rem;
+  padding: 1.5rem 0;
+}
+header nav {
+  display: flex;
+}
+header nav .header__nav__logo {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+header nav .header__nav__logo img {
+  width: 150px;
+}
+header nav ul {
+  display: flex;
+  align-items: center;
+}
+header nav ul li {
+  list-style: none;
+}
+header nav ul li a {
+  font-weight: 700;
+  text-decoration: none;
+  color: #eef0f2;
+  padding: 1rem;
+}
+header nav ul li:last-child {
+  margin-right: 3rem;
+}
+
+/*   Header Styles   */
+/*   Global Styles   */
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #252530;
 }
 
 .blob {
@@ -9,14 +45,37 @@ body {
   color: #141414;
   border-radius: 2rem;
   border: 1px solid #141414;
-  font-size: 0.6rem;
+  font-size: 0.4rem;
+  max-width: fit-content;
   display: inline-block;
-  padding: 0.2rem 0.3rem;
-  padding-right: 0.1rem;
+  padding: 0.3rem 0.4rem;
+  padding-right: 0.3rem;
   letter-spacing: 0.1rem;
+  cursor: pointer;
+  font-weight: 700;
+  flex: none;
 }
 .blob:hover {
   background-color: #141414;
+  color: #eef0f2;
+}
+
+article {
+  border-radius: 3rem;
+  display: flex;
+  flex-direction: column;
+  color: #eef0f2;
+  font-family: "Open Sans", sans-serif;
+}
+article h1, article h2, article h3, article h4 {
+  font-family: "Merriweather", serif;
+}
+
+.aside {
+  position: fixed;
+  left: -75px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
   color: #eef0f2;
 }
 

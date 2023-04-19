@@ -1,15 +1,31 @@
 @use "variables/colors" as color;
 @use "mixins/buttons" as button;
+@use "mixins/articles" as article;
+
+/*   Header Styles   */
+@use "components/header" as header;
+
+/*   Global Styles   */
 
 body {
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: color.$compliment;
 }
 
 .blob {
-    @include button.blob;
+  @include button.blob;
 }
 
+article {
+  @include article.article;
+}
 
-
+.aside {
+  position: fixed;
+  left: -75px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  color:color.$light;
+}
