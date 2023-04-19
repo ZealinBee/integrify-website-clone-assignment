@@ -1,13 +1,50 @@
 @use "../variables/colors" as color;
 @use "../variables/fonts" as fonts;
+@use "../mixins/buttons" as buttons;
 
 .subscribe {
+    margin-top:10rem;
     .subscribe__title {
-        font-size: 2.5rem;
+        font-size: 2.75rem;
+        width:calc(40% + 10rem);
+        margin:0 auto;
         font-weight: 700;
         color: color.$light;
         text-align: center;
         margin-bottom: 2rem;
         font-family: fonts.$secondary-font;
+    }
+
+    .subscribe__typing {
+        text-align: center;
+        color:color.$light;
+        font-size:1.25rem;
+        margin-bottom:2.5rem;
+    }
+
+    .subscribe__form {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        .subscribe__form__email {
+            text-align: center;
+            width:30%;
+            padding: 0.5rem 2rem;
+            border:none;
+            border-bottom: 3px solid color.$light;
+            font-size: 1rem;
+            outline:none;
+            font-weight: 700;
+            color: color.$light;
+            background-color: color.$compliment;
+            margin-bottom: 1rem;
+            font-family: fonts.$primary-font;
+        }
+
+        .subscribe__form__button {
+            @include buttons.button;
+            margin-top:2rem;
+            padding: 1.75rem 2.5rem;
+        }
     }
 }

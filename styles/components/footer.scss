@@ -1,0 +1,46 @@
+@use "../variables/colors" as color;
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding:0 8rem;
+  margin-top:8rem;
+  .footer__nav {
+    display: flex;
+    flex-direction: column;
+    .footer__nav__ul {
+      display: flex;
+      list-style: none;
+      padding-left:0;
+      margin: 0.5rem 0;
+      li {
+        a {
+          font-weight: 700;
+          text-decoration: none;
+          color: color.$light;
+          white-space: nowrap;
+          padding: 0.5rem;
+          font-size:0.75rem;
+          &:hover {
+          }
+        }
+      }
+    }
+
+    .footer__nav__copyright {
+        font-size: 0.7rem;
+        font-weight: 400;
+        margin-bottom: 2rem;
+        padding-left:0.5rem;
+        color:rgb(173, 173, 173);
+        a {
+            color:rgb(173, 173, 173);
+            text-decoration: none;
+        }
+    }
+  }
+
+  .footer__social {
+    display:flex;
+  }
+}

@@ -1,8 +1,13 @@
 @use "../mixins/buttons" as button;
+@use "../variables/colors" as color;
 
 .earlier-articles {
   h3 {
     text-align: center;
+    color: color.$light;
+    font-size:0.7rem;
+    letter-spacing: 0.15rem;
+    margin: 3.5rem 0 2.5rem 0;
   }
 
   .earlier-articles__button {

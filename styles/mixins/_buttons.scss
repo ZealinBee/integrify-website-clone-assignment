@@ -24,7 +24,7 @@
 @mixin button($bg-color:color.$light, $color: color.$compliment) {
     font-family: fonts.$primary-font;
     border-radius: 1rem;
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.15rem;
     padding: 1.5rem 0;
     font-weight: 700;
     cursor: pointer;
