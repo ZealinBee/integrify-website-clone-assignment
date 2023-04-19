@@ -1,4 +1,5 @@
 @use "../variables/colors" as color;
+@use "../variables/fonts" as fonts;
 
 @mixin blob($bg-color:color.$light, $color: color.$dark, $border-radius:2rem, $border: 1px solid color.$light) {
     background: $bg-color;
@@ -14,6 +15,23 @@
     cursor: pointer;
     font-weight:700;
     flex:none;
+    &:hover {
+        background-color: $color;
+        color: $bg-color;
+    }
+}
+
+@mixin button($bg-color:color.$light, $color: color.$compliment) {
+    font-family: fonts.$primary-font;
+    border-radius: 1rem;
+    letter-spacing: 0.2rem;
+    padding: 1.5rem 0;
+    font-weight: 700;
+    cursor: pointer;
+    background:$bg-color;
+    color: $color;
+    display:inline-block;
+    border:none;
     &:hover {
         background-color: $color;
         color: $bg-color;

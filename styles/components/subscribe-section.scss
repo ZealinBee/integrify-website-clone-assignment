@@ -1,0 +1,13 @@
+@use "../variables/colors" as color;
+@use "../variables/fonts" as fonts;
+
+.subscribe {
+    .subscribe__title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: color.$light;
+        text-align: center;
+        margin-bottom: 2rem;
+        font-family: fonts.$secondary-font;
+    }
+}

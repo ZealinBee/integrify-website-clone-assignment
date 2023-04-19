@@ -3,10 +3,13 @@ main {
   grid-template-columns: 40% 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   margin: 2rem calc(10% - 70px);
-  gap:0.5rem;
+  gap: 1rem;
 
   .main__article {
     cursor: pointer;
+    .main__article__author {
+      margin-top: auto;
+    }
   }
 
   .main__article:nth-child(1) {
@@ -14,11 +17,8 @@ main {
     grid-column: 1/2;
   }
 
-  .main__article__author {
-    margin-top:auto;
-  }
-
   .blob {
     pointer-events: none;
+    margin-bottom:2rem;
   }
 }

@@ -1,9 +1,6 @@
-
-
 @use "variables/colors" as color;
 @use "mixins/buttons" as button;
 @use "mixins/articles" as article;
-
 
 /*   Header Styles   */
 @use "components/header" as header;
@@ -14,6 +11,12 @@
 /*   Individual Section Styles   */
 @use "components/individual-sections" as section;
 
+/* Article section Styles */
+
+@use "components/articles-section" as articles;
+
+/* Subscribe Section Styles */
+@use "components/subscribe-section" as subscribe;
 /*   Global Styles   */
 
 body {
@@ -23,11 +26,9 @@ body {
   background-color: color.$compliment;
 }
 
-
-
-
 .blob {
   @include button.blob;
+
 }
 
 article {
@@ -39,6 +40,5 @@ article {
   left: -75px;
   top: 50%;
   transform: translateY(-50%) rotate(90deg);
-  color:color.$light;
+  color: color.$light;
 }
-

@@ -3,18 +3,27 @@
 .section-1,
 .section-2,
 .section-3 {
-  margin: 1rem 3rem;
+  margin: 1rem calc(10% - 20px);
+
   article {
-    padding: 5rem;
+    padding: 5.5rem 7rem;
   }
+
   h2 {
     font-size: 3rem;
     margin: 2rem 0;
-    margin-right: 5rem;
+    margin-right: 6rem;
   }
 
   h3 {
     font-family: font.$primary-font;
+    font-size:1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  h4 {
+    font-family: font.$primary-font;
+    font-size:0.9rem;
   }
 
   .blob {

@@ -1,8 +1,7 @@
 @use "../variables/colors" as color;
 
 header {
-    margin-left:3rem;
-    padding:1.5rem 0;
+    padding:1.5rem calc(15% - 3rem);
   nav {
     display: flex;
     .header__nav__logo {
@@ -10,7 +9,7 @@ header {
       align-items: center;
       margin-right: auto;
       img {
-        width: 150px;
+        width: 125px;
       }
     }
     ul {
@@ -22,12 +21,12 @@ header {
           font-weight: 700;
           text-decoration: none;
           color: color.$light;
+          white-space: nowrap;
           padding: 1rem;
           &:hover {
           }
         }
         &:last-child {
-          margin-right: 3rem;
         }
       }
     }
