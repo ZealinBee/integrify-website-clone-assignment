@@ -1,14 +1,35 @@
 @use "../variables/colors" as color;
 @use "../variables/fonts" as font;
 
-@mixin article($header-color: color.$light) {
-    border-radius: 3rem;
-    display:flex;
-    flex-direction: column;
-    color:$header-color;
-    font-family: font.$primary-font;
-    h1, h2, h3, h4 {
-        font-family: font.$secondary-font;
-    }
+@mixin article($header-color: color.$light, $background-color: color.$secondary) {
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  color: $header-color;
+  font-family: font.$primary-font;
+  background-color: $background-color;
+  padding: 1.5rem;
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: font.$secondary-font;
+    font-weight: 900;
+    padding: 0;
+    margin:0;
+    margin-right: 3rem;
 
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
 }

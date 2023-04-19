@@ -1,0 +1,24 @@
+@use "../variables/fonts" as font;
+
+.section-1,
+.section-2,
+.section-3 {
+  margin: 1rem 3rem;
+  article {
+    padding: 5rem;
+  }
+  h2 {
+    font-size: 3rem;
+    margin: 2rem 0;
+    margin-right: 5rem;
+  }
+
+  h3 {
+    font-family: font.$primary-font;
+  }
+
+  .blob {
+    letter-spacing: 0.2rem;
+    font-size: 0.45rem;
+  }
+}
