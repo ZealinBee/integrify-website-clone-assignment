@@ -1,4 +1,32 @@
 @use "../variables/fonts" as font;
+@use "../mixins/articles" as article;
+@use "../variables/colors" as color;
+
+.section-1 article {
+  @include article.article(
+    color.$light,
+    color.$primary,
+    url("../../assets/museum.jpg"),
+    rgba(0,0,0,0.2)
+  );
+}
+.section-2 article {
+  @include article.article(
+    color.$dark,
+    color.$primary,
+    url("../../assets/office.webp"),
+    #FCD88290
+  );
+}
+.section-3 article {
+  @include article.article(
+    color.$light,
+    color.$primary,
+    url("../../assets/furniture.jpg"),
+    rgba(0,0,0,0.2)
+  );
+}
+
 
 .section-1,
 .section-2,
@@ -9,6 +37,8 @@
     padding: 5.5rem 7rem;
   }
 
+  
+
   h2 {
     font-size: 3rem;
     margin: 2rem 0;
@@ -17,13 +47,13 @@
 
   h3 {
     font-family: font.$primary-font;
-    font-size:1.2rem;
+    font-size: 1.2rem;
     margin-bottom: 2rem;
   }
 
   h4 {
     font-family: font.$primary-font;
-    font-size:0.9rem;
+    font-size: 0.9rem;
   }
 
   .blob {
@@ -31,3 +61,4 @@
     font-size: 0.45rem;
   }
 }
+

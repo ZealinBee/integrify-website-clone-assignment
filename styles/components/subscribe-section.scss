@@ -45,6 +45,11 @@
             @include buttons.button;
             margin-top:2rem;
             padding: 1.75rem 2.5rem;
+            width:175px;
+            transition: width 0.25s ease-in-out;
+            &:hover{
+                width:190px;
+            }
         }
     }
 }

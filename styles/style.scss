@@ -22,16 +22,18 @@
 @use "components/footer" as footer;
 /*   Global Styles   */
 
-body {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
   background-color: color.$compliment;
 }
 
 .blob {
   @include button.blob;
-
 }
 
 article {
@@ -41,7 +43,20 @@ article {
 .aside {
   position: fixed;
   left: -75px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
   top: 50%;
-  transform: translateY(-50%) rotate(90deg);
+  transform: translateY(-50%) rotate(270deg);
   color: color.$light;
+}
+
+.icon {
+  font-size: 1.2rem;
+  margin: 1rem;
+  color: white;
+  transition: all ease-in 200ms;
+  &:hover {
+    color: color.$secondary;
+  }
 }

@@ -1,7 +1,7 @@
 @use "../variables/colors" as color;
 
 header {
-    padding:1.5rem calc(15% - 3rem);
+  padding: 1.5rem calc(15% - 3rem);
   nav {
     display: flex;
     .header__nav__logo {

@@ -1,3 +1,6 @@
+@use "../variables/colors" as color;
+@use "../mixins/articles" as article;
+
 main {
   display: grid;
   grid-template-columns: 40% 1fr 1fr;
@@ -12,13 +15,82 @@ main {
     }
   }
 
+  h1 {
+    font-size: 2rem;
+
+  }
+
+  h2 {
+    font-size: 1.3rem;
+
+  }
+
+  p {
+    font-size: 0.8rem;
+
+  }
+
+  .main__article__author {
+    font-weight:700;
+  }
+
   .main__article:nth-child(1) {
     grid-row: 1/3;
     grid-column: 1/2;
+    @include article.article(
+      color.$light,
+      color.$secondary,
+      url("../assets/bathroom.jpg"),
+      rgba(0, 0, 0, 0.2)
+    );
+  }
+
+  .main__article:nth-child(2) {
+    @include article.article(
+      color.$light,
+      color.$secondary,
+      url("../assets/livingroom.webp"),
+      #4342E680
+    );
+  }
+  .main__article:nth-child(3) {
+    @include article.article(
+      color.$compliment,
+      color.$secondary,
+      none,
+      #FFB469
+    );
+  }
+
+  .main__article:nth-child(3) {
+    @include article.article(
+      color.$compliment,
+      color.$secondary,
+      none,
+      #FFB469
+    );
+  }
+
+  .main__article:nth-child(4) {
+    @include article.article(
+      color.$light,
+      color.$secondary,
+      url("../assets/restaurant.jpg"),
+      #86279A80
+    );
+  }
+
+  .main__article:nth-child(5) {
+    @include article.article(
+      color.$compliment,
+      color.$secondary,
+      url("../assets/office.webp"),
+      #F8A2D395
+    );
   }
 
   .blob {
     pointer-events: none;
-    margin-bottom:2rem;
+    margin-bottom: 2rem;
   }
 }
