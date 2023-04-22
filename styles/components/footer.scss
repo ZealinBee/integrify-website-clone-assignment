@@ -16,13 +16,36 @@ footer {
       margin-bottom:1.5rem;
       li {
         a {
+          position: relative;
           font-weight: 700;
           text-decoration: none;
           color: color.$light;
           white-space: nowrap;
           padding: 0.5rem;
           font-size:0.75rem;
-          &:hover {
+          
+        }
+        .active::before {
+          content: "";
+          position: absolute;
+          width: 5px;
+          height: 5px;
+          top: 5px;
+          right: 0px;
+          border-radius: 50%;
+          background-color: color.$secondary;
+        }
+
+        a:not(.active) {
+          &:hover::before {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            top: 5px;
+            right: 0px;
+            border-radius: 50%;
+            background-color: color.$light;
           }
         }
       }

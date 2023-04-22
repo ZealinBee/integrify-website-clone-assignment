@@ -26,6 +26,27 @@ header nav ul li a {
   color: #eef0f2;
   white-space: nowrap;
   padding: 1rem;
+  position: relative;
+}
+header nav ul li .active::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  top: 12px;
+  right: 9px;
+  border-radius: 50%;
+  background-color: #EEC643;
+}
+header nav ul li a:not(.active, .search):hover::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  top: 12px;
+  right: 9px;
+  border-radius: 50%;
+  background-color: #eef0f2;
 }
 main {
   display: grid;
@@ -190,7 +211,7 @@ main .main__article:nth-child(3)::before {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: #FFB469;
+  background-color: #ffb469;
   border-radius: 1.5rem;
   z-index: 0;
 }
@@ -237,7 +258,7 @@ main .main__article:nth-child(3)::before {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: #FFB469;
+  background-color: #ffb469;
   border-radius: 1.5rem;
   z-index: 0;
 }
@@ -344,6 +365,46 @@ main .blob {
   pointer-events: none;
   margin-bottom: 3rem;
 }
+main article:nth-child(3) .blob {
+  background: #252530;
+  color: #ffb469;
+  border: none;
+  font-size: 0.45rem;
+  border-radius: 2rem;
+  max-width: fit-content;
+  display: inline-block;
+  padding: 0.2rem 0.45rem;
+  padding-right: 0.3rem;
+  letter-spacing: 0.13rem;
+  cursor: pointer;
+  font-weight: 700;
+  flex: none;
+  z-index: 5;
+}
+main article:nth-child(3) .blob:hover {
+  background-color: #ffb469;
+  color: #252530;
+}
+main article:nth-child(5) .blob {
+  background: #252530;
+  color: #f8a2d3;
+  border: none;
+  font-size: 0.45rem;
+  border-radius: 2rem;
+  max-width: fit-content;
+  display: inline-block;
+  padding: 0.2rem 0.45rem;
+  padding-right: 0.3rem;
+  letter-spacing: 0.13rem;
+  cursor: pointer;
+  font-weight: 700;
+  flex: none;
+  z-index: 5;
+}
+main article:nth-child(5) .blob:hover {
+  background-color: #f8a2d3;
+  color: #252530;
+}
 
 .section-1 article {
   border-radius: 1.5rem;
@@ -352,7 +413,7 @@ main .blob {
   color: #eef0f2;
   font-family: "Open Sans", sans-serif;
   background-color: #0d21a1;
-  background-image: url("../../assets/museum.jpg");
+  background-image: url("../../assets/cafe.jpeg");
   background-position: center;
   background-size: 120%;
   padding: 1.5rem;
@@ -383,7 +444,7 @@ main .blob {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.3);
   border-radius: 1.5rem;
   z-index: 0;
 }
@@ -489,10 +550,63 @@ main .blob {
   }
 }
 
+.section-1 .blob,
+.section-3 .blob {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  font-size: 0.45rem;
+  border-radius: 2rem;
+  max-width: fit-content;
+  display: inline-block;
+  padding: 0.2rem 0.45rem;
+  padding-right: 0.3rem;
+  letter-spacing: 0.13rem;
+  cursor: pointer;
+  font-weight: 700;
+  flex: none;
+  z-index: 5;
+}
+.section-1 .blob:hover,
+.section-3 .blob:hover {
+  background-color: white;
+  color: transparent;
+}
+.section-1 .blob:hover,
+.section-3 .blob:hover {
+  background-color: white;
+  color: black;
+}
+
+.section-2 .blob {
+  background: transparent;
+  color: #0d21a1;
+  border: 1px solid #0d21a1;
+  font-size: 0.45rem;
+  border-radius: 2rem;
+  max-width: fit-content;
+  display: inline-block;
+  padding: 0.2rem 0.45rem;
+  padding-right: 0.3rem;
+  letter-spacing: 0.13rem;
+  cursor: pointer;
+  font-weight: 700;
+  flex: none;
+  z-index: 5;
+}
+.section-2 .blob:hover {
+  background-color: #0d21a1;
+  color: transparent;
+}
+.section-2 .blob:hover {
+  background-color: #0d21a1;
+  color: white;
+}
+
 .section-1,
 .section-2,
 .section-3 {
-  margin: 1rem calc(10% - 20px);
+  margin: 2.5rem calc(10% - 20px);
 }
 .section-1 article,
 .section-2 article,
@@ -511,6 +625,20 @@ main .blob {
   font-size: 3rem;
   margin: 2rem 0;
   margin-right: 6rem;
+}
+.section-1 h2 .arrow,
+.section-2 h2 .arrow,
+.section-3 h2 .arrow {
+  opacity: 0;
+  transform: translateX(-25px);
+  font-size: 2.5rem;
+  transition: all 0.25s ease-in-out;
+}
+.section-1 h2:hover .arrow,
+.section-2 h2:hover .arrow,
+.section-3 h2:hover .arrow {
+  opacity: 1;
+  transform: translateX(0px);
 }
 .section-1 h3,
 .section-2 h3,
@@ -863,11 +991,24 @@ main .blob {
   margin-bottom: 2rem;
   font-family: "Merriweather", serif;
 }
-.subscribe .subscribe__typing {
-  text-align: center;
-  color: #eef0f2;
+.subscribe .subscribe__typing__parent {
+  width: fit-content;
+  margin: 0 auto;
+  display: flex;
   font-size: 1.25rem;
+}
+.subscribe .subscribe__typing__parent span {
+  display: inline;
+  margin-right: 0.5rem;
+  color: white;
+  animation: blink-caret 1s steps(40) infinite;
+}
+.subscribe .subscribe__typing__parent .subscribe__typing {
+  color: #eef0f2;
   margin-bottom: 2.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 3s steps(40) infinite alternate;
 }
 .subscribe .subscribe__form {
   display: flex;
@@ -887,6 +1028,10 @@ main .blob {
   background-color: #252530;
   margin-bottom: 1rem;
   font-family: "Open Sans", sans-serif;
+  transition: all 0.25s ease-in-out;
+}
+.subscribe .subscribe__form .subscribe__form__email:focus {
+  width: 40%;
 }
 .subscribe .subscribe__form .subscribe__form__button {
   font-family: "Open Sans", sans-serif;
@@ -912,6 +1057,22 @@ main .blob {
   width: 190px;
 }
 
+@keyframes typing {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 100%;
+  }
+}
+@keyframes blink-caret {
+  from, to {
+    color: transparent;
+  }
+  60% {
+    color: #eef0f2;
+  }
+}
 footer {
   display: flex;
   justify-content: space-between;
@@ -930,12 +1091,33 @@ footer .footer__nav .footer__nav__ul {
   margin-bottom: 1.5rem;
 }
 footer .footer__nav .footer__nav__ul li a {
+  position: relative;
   font-weight: 700;
   text-decoration: none;
   color: #eef0f2;
   white-space: nowrap;
   padding: 0.5rem;
   font-size: 0.75rem;
+}
+footer .footer__nav .footer__nav__ul li .active::before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  top: 5px;
+  right: 0px;
+  border-radius: 50%;
+  background-color: #EEC643;
+}
+footer .footer__nav .footer__nav__ul li a:not(.active):hover::before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  top: 5px;
+  right: 0px;
+  border-radius: 50%;
+  background-color: #eef0f2;
 }
 footer .footer__nav .footer__nav__copyright {
   font-size: 0.7rem;
@@ -972,17 +1154,18 @@ body {
 .blob {
   background: #eef0f2;
   color: #141414;
-  border-radius: 2rem;
   border: 1px solid #eef0f2;
-  font-size: 0.4rem;
+  font-size: 0.45rem;
+  border-radius: 2rem;
   max-width: fit-content;
   display: inline-block;
-  padding: 0.3rem 0.4rem;
+  padding: 0.2rem 0.45rem;
   padding-right: 0.3rem;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.13rem;
   cursor: pointer;
   font-weight: 700;
   flex: none;
+  z-index: 5;
 }
 .blob:hover {
   background-color: #141414;

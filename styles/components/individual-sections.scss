@@ -1,13 +1,14 @@
 @use "../variables/fonts" as font;
 @use "../mixins/articles" as article;
 @use "../variables/colors" as color;
+@use "../mixins/buttons";
 
 .section-1 article {
   @include article.article(
     color.$light,
     color.$primary,
-    url("../../assets/museum.jpg"),
-    rgba(0, 0, 0, 0.2)
+    url("../../assets/cafe.jpeg"),
+    rgba(0, 0, 0, 0.3)
   );
 }
 .section-2 article {
@@ -27,23 +28,53 @@
   );
 }
 
+.section-1 .blob,
+.section-3 .blob {
+  @include buttons.blob(transparent, white, 1px solid white);
+  &:hover {
+    background-color: white;
+    color: black;
+  }
+
+}
+
+.section-2 .blob {
+  @include buttons.blob(transparent, color.$primary, 1px solid color.$primary);
+  &:hover {
+    background-color: color.$primary;
+    color: white;
+  }
+}
+
 .section-1,
 .section-2,
 .section-3 {
-  margin: 1rem calc(10% - 20px);
+  margin: 2.5rem calc(10% - 20px);
 
   article {
     padding: 5.5rem 7rem;
     transition: all 0.2s ease-in-out;
     &:hover {
-      background-size:122%;
+      background-size: 122%;
     }
+  
   }
 
   h2 {
     font-size: 3rem;
     margin: 2rem 0;
     margin-right: 6rem;
+    .arrow {
+      opacity: 0;
+      transform: translateX(-25px);
+      font-size:2.5rem;
+      transition: all 0.25s ease-in-out;
+    }
+
+    &:hover .arrow {
+      opacity: 1;
+      transform: translateX(0px);
+    }
   }
 
   h3 {
@@ -53,11 +84,11 @@
   }
 
   h3 {
-    font-family: font.$primary-font!important;
+    font-family: font.$primary-font !important;
   }
 
   h4 {
-    font-family: font.$primary-font!important;
+    font-family: font.$primary-font !important;
     font-size: 0.9rem;
   }
 
@@ -65,6 +96,4 @@
     letter-spacing: 0.15rem;
     font-size: 0.45rem;
   }
-
- 
 }

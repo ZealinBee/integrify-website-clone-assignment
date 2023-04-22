@@ -1,4 +1,5 @@
 @use "../variables/colors" as color;
+@use "../mixins/buttons";
 @use "../mixins/articles" as article;
 
 main {
@@ -10,7 +11,7 @@ main {
 
   .main__article {
     cursor: pointer;
-    transition:transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
     .main__article__author {
       margin-top: auto;
     }
@@ -21,7 +22,6 @@ main {
 
   h1 {
     font-size: 2.25rem;
-
   }
 
   h2 {
@@ -33,7 +33,7 @@ main {
   }
 
   .main__article__author {
-    font-weight:700;
+    font-weight: 700;
   }
 
   .main__article:nth-child(1) {
@@ -52,7 +52,7 @@ main {
       color.$light,
       color.$secondary,
       url("../assets/livingroom.webp"),
-      #4342E680
+      #4342e680
     );
   }
   .main__article:nth-child(3) {
@@ -60,7 +60,7 @@ main {
       color.$compliment,
       color.$secondary,
       none,
-      #FFB469
+      #ffb469
     );
   }
 
@@ -69,7 +69,7 @@ main {
       color.$compliment,
       color.$secondary,
       none,
-      #FFB469
+      #ffb469
     );
   }
 
@@ -78,7 +78,7 @@ main {
       color.$light,
       color.$secondary,
       url("../assets/restaurant.jpg"),
-      #86279A80
+      #86279a80
     );
   }
 
@@ -87,12 +87,19 @@ main {
       color.$compliment,
       color.$secondary,
       url("../assets/office.webp"),
-      #F8A2D395
+      #f8a2d395
     );
   }
 
   .blob {
     pointer-events: none;
     margin-bottom: 3rem;
+  }
+
+  article:nth-child(3) .blob {
+    @include buttons.blob(color.$compliment, #ffb469, none);
+  }
+  article:nth-child(5) .blob {
+    @include buttons.blob(color.$compliment, #f8a2d3, none);
   }
 }

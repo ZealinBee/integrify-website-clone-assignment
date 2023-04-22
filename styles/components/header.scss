@@ -23,7 +23,29 @@ header {
           color: color.$light;
           white-space: nowrap;
           padding: 1rem;
-          &:hover {
+          position: relative;
+        }
+        .active::before {
+          content: "";
+          position: absolute;
+          width: 6px;
+          height: 6px;
+          top: 12px;
+          right: 9px;
+          border-radius: 50%;
+          background-color: color.$secondary;
+        }
+
+        a:not(.active, .search) {
+          &:hover::before {
+            content: "";
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            top: 12px;
+            right: 9px;
+            border-radius: 50%;
+            background-color: color.$light;
           }
         }
         &:last-child {

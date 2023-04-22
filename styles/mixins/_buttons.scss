@@ -4,22 +4,22 @@
 @mixin blob(
   $bg-color: color.$light,
   $color: color.$dark,
-  $border-radius: 2rem,
   $border: 1px solid color.$light
 ) {
   background: $bg-color;
   color: $color;
-  border-radius: $border-radius;
   border: $border;
-  font-size: 0.4rem;
+  font-size: 0.45rem;
+  border-radius: 2rem;
   max-width: fit-content;
   display: inline-block;
-  padding: 0.3rem 0.4rem;
+  padding: 0.2rem 0.45rem;
   padding-right: 0.3rem;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.13rem;
   cursor: pointer;
   font-weight: 700;
   flex: none;
+  z-index:5;
   &:hover {
     background-color: $color;
     color: $bg-color;

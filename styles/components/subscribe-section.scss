@@ -14,13 +14,27 @@
         margin-bottom: 2rem;
         font-family: fonts.$secondary-font;
     }
-
-    .subscribe__typing {
-        text-align: center;
-        color:color.$light;
+    .subscribe__typing__parent {
+        width:fit-content;
+        margin:0 auto;
+        display:flex;
         font-size:1.25rem;
-        margin-bottom:2.5rem;
+        span {
+            display:inline;
+            margin-right:0.5rem;
+            color:white;
+            animation: blink-caret 1s steps(40) infinite;
+        }
+        .subscribe__typing {
+            color:color.$light;
+            margin-bottom:2.5rem;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 3s  steps(40) infinite alternate;
+        }
     }
+
+
 
     .subscribe__form {
         display:flex;
@@ -39,6 +53,10 @@
             background-color: color.$compliment;
             margin-bottom: 1rem;
             font-family: fonts.$primary-font;
+            transition: all 0.25s ease-in-out;
+            &:focus {
+                width:40%;
+            }
         }
 
         .subscribe__form__button {
@@ -52,4 +70,14 @@
             }
         }
     }
+}
+
+@keyframes typing {
+    0% { width: 0% }
+    50% { width: 100% }
+}
+    
+@keyframes blink-caret {
+    from, to { color: transparent }
+    60% { color: color.$light }
 }
